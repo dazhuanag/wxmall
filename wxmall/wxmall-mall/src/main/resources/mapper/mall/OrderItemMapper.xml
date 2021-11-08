@@ -7,9 +7,9 @@
   -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joolun.mall.mapper.OrderItemMapper">
+<mapper namespace="com.wxmall.mall.mapper.OrderItemMapper">
 
-	<resultMap id="orderItemMap" type="com.joolun.mall.entity.OrderItem">
+	<resultMap id="orderItemMap" type="com.wxmall.mall.entity.OrderItem">
 		<id property="id" column="id"/>
 		<result property="delFlag" column="del_flag"/>
 		<result property="createTime" column="create_time"/>

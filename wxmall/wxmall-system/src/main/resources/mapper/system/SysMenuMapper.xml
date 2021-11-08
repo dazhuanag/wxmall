@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
 		PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.joolun.system.mapper.SysMenuMapper">
+<mapper namespace="com.wxmall.system.mapper.SysMenuMapper">
 
-	<resultMap type="com.joolun.common.core.domain.entity.SysMenu" id="SysMenuResult">
+	<resultMap type="com.wxmall.common.core.domain.entity.SysMenu" id="SysMenuResult">
 		<id     property="menuId"         column="menu_id"        />
 		<result property="menuName"       column="menu_name"      />
 		<result property="parentName"     column="parent_name"    />
@@ -31,7 +31,7 @@
 		from sys_menu
     </sql>
     
-    <select id="selectMenuList" parameterType="com.joolun.common.core.domain.entity.SysMenu" resultMap="SysMenuResult">
+    <select id="selectMenuList" parameterType="com.wxmall.common.core.domain.entity.SysMenu" resultMap="SysMenuResult">
 		<include refid="selectMenuVo"/>
 		<where>
 			<if test="menuName != null and menuName != ''">
@@ -53,7 +53,7 @@
 		order by m.parent_id, m.order_num
 	</select>
 	
-	<select id="selectMenuListByUserId" parameterType="com.joolun.common.core.domain.entity.SysMenu" resultMap="SysMenuResult">
+	<select id="selectMenuListByUserId" parameterType="com.wxmall.common.core.domain.entity.SysMenu" resultMap="SysMenuResult">
 		select distinct m.menu_id, m.parent_id, m.menu_name, m.path, m.component, m.visible, m.status, ifnull(m.perms,'') as perms, m.is_frame, m.is_cache, m.menu_type, m.icon, m.order_num, m.create_time
 		from sys_menu m
 		left join sys_role_menu rm on m.menu_id = rm.menu_id
@@ -119,12 +119,12 @@
 	    select count(1) from sys_menu where parent_id = #{menuId}  
 	</select>
 	
-	<select id="checkMenuNameUnique" parameterType="com.joolun.common.core.domain.entity.SysMenu" resultMap="SysMenuResult">
+	<select id="checkMenuNameUnique" parameterType="com.wxmall.common.core.domain.entity.SysMenu" resultMap="SysMenuResult">
 		<include refid="selectMenuVo"/>
 		where menu_name=#{menuName} and parent_id = #{parentId} limit 1
 	</select>
 	
-	<update id="updateMenu" parameterType="com.joolun.common.core.domain.entity.SysMenu">
+	<update id="updateMenu" parameterType="com.wxmall.common.core.domain.entity.SysMenu">
 		update sys_menu
 		<set>
 			<if test="menuName != null and menuName != ''">menu_name = #{menuName},</if>
@@ -146,7 +146,7 @@
 		where menu_id = #{menuId}
 	</update>
 
-	<insert id="insertMenu" parameterType="com.joolun.common.core.domain.entity.SysMenu">
+	<insert id="insertMenu" parameterType="com.wxmall.common.core.domain.entity.SysMenu">
 		insert into sys_menu(
 		<if test="menuId != null and menuId != 0">menu_id,</if>
 		<if test="parentId != null and parentId != 0">parent_id,</if>

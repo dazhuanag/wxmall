@@ -7,9 +7,9 @@
   -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joolun.mall.mapper.OrderInfoMapper">
+<mapper namespace="com.wxmall.mall.mapper.OrderInfoMapper">
 
-	<resultMap id="orderInfoMap" type="com.joolun.mall.entity.OrderInfo">
+	<resultMap id="orderInfoMap" type="com.wxmall.mall.entity.OrderInfo">
 		<id property="id" column="id"/>
 		<result property="delFlag" column="del_flag"/>
 		<result property="createTime" column="create_time"/>
@@ -33,13 +33,13 @@
 		<result property="userMessage" column="user_message"/>
 	</resultMap>
 
-	<resultMap id="orderInfoMap2" extends="orderInfoMap" type="com.joolun.mall.entity.OrderInfo">
-		<collection property="listOrderItem" ofType="com.joolun.mall.entity.OrderItem"
-					select="com.joolun.mall.mapper.OrderItemMapper.selectList2"
+	<resultMap id="orderInfoMap2" extends="orderInfoMap" type="com.wxmall.mall.entity.OrderInfo">
+		<collection property="listOrderItem" ofType="com.wxmall.mall.entity.OrderItem"
+					select="com.wxmall.mall.mapper.OrderItemMapper.selectList2"
 					column="{orderId=id}">
 		</collection>
-		<collection property="orderLogistics" ofType="com.joolun.mall.entity.OrderLogistics"
-					select="com.joolun.mall.mapper.OrderLogisticsMapper.selectById"
+		<collection property="orderLogistics" ofType="com.wxmall.mall.entity.OrderLogistics"
+					select="com.wxmall.mall.mapper.OrderLogisticsMapper.selectById"
 					column="{id=logistics_id}">
 		</collection>
 	</resultMap>

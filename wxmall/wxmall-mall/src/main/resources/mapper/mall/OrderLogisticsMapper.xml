@@ -7,9 +7,9 @@
   -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joolun.mall.mapper.OrderLogisticsMapper">
+<mapper namespace="com.wxmall.mall.mapper.OrderLogisticsMapper">
 
-	<resultMap id="orderLogisticsMap" type="com.joolun.mall.entity.OrderLogistics">
+	<resultMap id="orderLogisticsMap" type="com.wxmall.mall.entity.OrderLogistics">
 		<id property="id" column="id"/>
 		<result property="delFlag" column="del_flag"/>
 		<result property="createTime" column="create_time"/>
@@ -25,7 +25,7 @@
 		<result property="message" column="message"/>
 	</resultMap>
 
-	<resultMap id="orderLogisticsMap2" extends="orderLogisticsMap" type="com.joolun.mall.entity.OrderLogistics">
+	<resultMap id="orderLogisticsMap2" extends="orderLogisticsMap" type="com.wxmall.mall.entity.OrderLogistics">
 
 	</resultMap>
 

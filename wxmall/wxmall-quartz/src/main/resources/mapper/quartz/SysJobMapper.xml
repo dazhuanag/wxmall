@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.joolun.quartz.mapper.SysJobMapper">
+<mapper namespace="com.wxmall.quartz.mapper.SysJobMapper">
 
-	<resultMap type="com.joolun.quartz.domain.SysJob" id="SysJobResult">
+	<resultMap type="com.wxmall.quartz.domain.SysJob" id="SysJobResult">
 		<id     property="jobId"          column="job_id"          />
 		<result property="jobName"        column="job_name"        />
 		<result property="jobGroup"       column="job_group"       />
@@ -25,7 +25,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		from sys_job
     </sql>
 	
-	<select id="selectJobList" parameterType="com.joolun.quartz.domain.SysJob" resultMap="SysJobResult">
+	<select id="selectJobList" parameterType="com.wxmall.quartz.domain.SysJob" resultMap="SysJobResult">
 		<include refid="selectJobVo"/>
 		<where>
 			<if test="jobName != null and jobName != ''">
@@ -63,7 +63,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         </foreach> 
  	</delete>
  	
- 	<update id="updateJob" parameterType="com.joolun.quartz.domain.SysJob">
+ 	<update id="updateJob" parameterType="com.wxmall.quartz.domain.SysJob">
  		update sys_job
  		<set>
  			<if test="jobName != null and jobName != ''">job_name = #{jobName},</if>
@@ -80,7 +80,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		where job_id = #{jobId}
 	</update>
  	
- 	<insert id="insertJob" parameterType="com.joolun.quartz.domain.SysJob" useGeneratedKeys="true" keyProperty="jobId">
+ 	<insert id="insertJob" parameterType="com.wxmall.quartz.domain.SysJob" useGeneratedKeys="true" keyProperty="jobId">
  		insert into sys_job(
  			<if test="jobId != null and jobId != 0">job_id,</if>
  			<if test="jobName != null and jobName != ''">job_name,</if>

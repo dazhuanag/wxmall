@@ -5,8 +5,8 @@
   -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joolun.cloud.weixin.admin.mapper.WxMsgMapper">
-	<resultMap id="wxMsgMap" type="com.joolun.weixin.entity.WxMsg">
+<mapper namespace="com.wxmall.weixin.mapper.WxMsgMapper">
+	<resultMap id="wxMsgMap" type="com.wxmall.weixin.entity.WxMsg">
 		<id property="id" column="id"/>
 		<result property="createId" column="create_id"/>
 		<result property="createTime" column="create_time"/>
@@ -37,7 +37,7 @@
 		<result property="readFlag" column="read_flag"/>
 	</resultMap>
 
-	<resultMap id="wxMsgMap2" extends="wxMsgMap" type="com.joolun.weixin.entity.WxMsgVO">
+	<resultMap id="wxMsgMap2" extends="wxMsgMap" type="com.wxmall.weixin.entity.WxMsgVO">
 		<result property="countMsg" column="count_msg"/>
 	</resultMap>
 

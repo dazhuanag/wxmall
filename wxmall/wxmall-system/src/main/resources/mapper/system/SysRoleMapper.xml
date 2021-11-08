@@ -2,9 +2,9 @@
 <!DOCTYPE mapper
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.joolun.system.mapper.SysRoleMapper">
+<mapper namespace="com.wxmall.system.mapper.SysRoleMapper">
 
-	<resultMap type="com.joolun.common.core.domain.entity.SysRole" id="SysRoleResult">
+	<resultMap type="com.wxmall.common.core.domain.entity.SysRole" id="SysRoleResult">
 		<id     property="roleId"             column="role_id"               />
 		<result property="roleName"           column="role_name"             />
 		<result property="roleKey"            column="role_key"              />
@@ -30,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	        left join sys_dept d on u.dept_id = d.dept_id
     </sql>
     
-    <select id="selectRoleList" parameterType="com.joolun.common.core.domain.entity.SysRole" resultMap="SysRoleResult">
+    <select id="selectRoleList" parameterType="com.wxmall.common.core.domain.entity.SysRole" resultMap="SysRoleResult">
 		<include refid="selectRoleVo"/>
 		where r.del_flag = '0'
 		<if test="roleName != null and roleName != ''">
@@ -90,7 +90,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		 where r.role_key=#{roleKey} limit 1
 	</select>
 	
- 	<insert id="insertRole" parameterType="com.joolun.common.core.domain.entity.SysRole" useGeneratedKeys="true" keyProperty="roleId">
+ 	<insert id="insertRole" parameterType="com.wxmall.common.core.domain.entity.SysRole" useGeneratedKeys="true" keyProperty="roleId">
  		insert into sys_role(
  			<if test="roleId != null and roleId != 0">role_id,</if>
  			<if test="roleName != null and roleName != ''">role_name,</if>
@@ -118,7 +118,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		)
 	</insert>
 	
-	<update id="updateRole" parameterType="com.joolun.common.core.domain.entity.SysRole">
+	<update id="updateRole" parameterType="com.wxmall.common.core.domain.entity.SysRole">
  		update sys_role
  		<set>
  			<if test="roleName != null and roleName != ''">role_name = #{roleName},</if>
@@ -135,7 +135,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
  		where role_id = #{roleId}
 	</update>
 	
-	<update id="updateRoleStatus" parameterType="com.joolun.common.core.domain.entity.SysRole">
+	<update id="updateRoleStatus" parameterType="com.wxmall.common.core.domain.entity.SysRole">
  		update sys_user set status = #{status} where user_id = #{userId}
 	</update>
 	

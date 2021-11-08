@@ -7,9 +7,9 @@
   -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joolun.mall.mapper.ShoppingCartMapper">
+<mapper namespace="com.wxmall.mall.mapper.ShoppingCartMapper">
 
-	<resultMap id="shoppingCartMap" type="com.joolun.mall.entity.ShoppingCart">
+	<resultMap id="shoppingCartMap" type="com.wxmall.mall.entity.ShoppingCart">
 		<id property="id" column="id"/>
 		<result property="delFlag" column="del_flag"/>
 		<result property="createTime" column="create_time"/>
@@ -21,9 +21,9 @@
 		<result property="spuName" column="spu_name"/>
 		<result property="picUrl" column="pic_url"/>
 	</resultMap>
-	<resultMap id="shoppingCartMap2" extends="shoppingCartMap" type="com.joolun.mall.entity.ShoppingCart">
-		<collection property="goodsSpu" ofType="com.joolun.mall.entity.GoodsSpu"
-					select="com.joolun.mall.mapper.GoodsSpuMapper.selectOneByShoppingCart"
+	<resultMap id="shoppingCartMap2" extends="shoppingCartMap" type="com.wxmall.mall.entity.ShoppingCart">
+		<collection property="goodsSpu" ofType="com.wxmall.mall.entity.GoodsSpu"
+					select="com.wxmall.mall.mapper.GoodsSpuMapper.selectOneByShoppingCart"
 					column="{id=spu_id}">
 		</collection>
 	</resultMap>

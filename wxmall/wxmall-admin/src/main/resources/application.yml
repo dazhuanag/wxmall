@@ -27,7 +27,7 @@ server:
 # 日志配置
 logging:
   level:
-    com.joolun: debug
+    com.wxmall: debug
     org.springframework: warn
 
 # Spring配置
@@ -86,9 +86,9 @@ token:
 mybatis-plus:
   mapperLocations: classpath*:mapper/**/*Mapper.xml
   # 自定义TypeHandler
-  type-handlers-package: com.joolun.framework.config.typehandler
+  type-handlers-package: com.wxmall.framework.config.typehandler
   #实体扫描，多个package用逗号或者分号分隔
-  typeAliasesPackage: com.joolun.**.domain,com.joolun.**.entity
+  typeAliasesPackage: com.wxmall.**.domain,com.wxmall.**.entity
   global-config:
     #是否控制台
     banner: false

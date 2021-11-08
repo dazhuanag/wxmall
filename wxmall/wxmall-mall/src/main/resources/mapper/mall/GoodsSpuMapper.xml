@@ -7,8 +7,8 @@
   -->
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.joolun.mall.mapper.GoodsSpuMapper">
-	<resultMap id="goodsSpuMap" type="com.joolun.mall.entity.GoodsSpu">
+<mapper namespace="com.wxmall.mall.mapper.GoodsSpuMapper">
+	<resultMap id="goodsSpuMap" type="com.wxmall.mall.entity.GoodsSpu">
 		<id property="id" column="id"/>
 		<result property="spuCode" column="spu_code"/>
 		<result property="name" column="name"/>
@@ -29,19 +29,19 @@
 		<result property="delFlag" column="del_flag"/>
 	</resultMap>
 
-	<resultMap id="goodsSpuMap1" extends="goodsSpuMap" type="com.joolun.mall.entity.GoodsSpu">
+	<resultMap id="goodsSpuMap1" extends="goodsSpuMap" type="com.wxmall.mall.entity.GoodsSpu">
 
 	</resultMap>
 
-	<resultMap id="goodsSpuMap2" extends="goodsSpuMap" type="com.joolun.mall.entity.GoodsSpu">
+	<resultMap id="goodsSpuMap2" extends="goodsSpuMap" type="com.wxmall.mall.entity.GoodsSpu">
 
 	</resultMap>
 
-	<resultMap id="goodsSpuMap3" extends="goodsSpuMap" type="com.joolun.mall.entity.GoodsSpu">
+	<resultMap id="goodsSpuMap3" extends="goodsSpuMap" type="com.wxmall.mall.entity.GoodsSpu">
 
 	</resultMap>
 
-	<resultMap id="goodsSpuMap4" extends="goodsSpuMap" type="com.joolun.mall.entity.GoodsSpu">
+	<resultMap id="goodsSpuMap4" extends="goodsSpuMap" type="com.wxmall.mall.entity.GoodsSpu">
 
 	</resultMap>
 
