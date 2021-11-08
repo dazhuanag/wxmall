@@ -57,7 +57,7 @@ spring:
     # 端口，默认为6379
     port: 26379
     # 数据库索引
-    database: 0
+    database: 10
     # 密码
     password: xsm1997
     # 连接超时时间
